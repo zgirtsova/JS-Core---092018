@@ -14,4 +14,4 @@ function drawTriangleOfStars(n) {
 
 }
 
-drawTriangleOfStars(3);
+drawTriangleOfStars(33);

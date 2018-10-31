@@ -4,8 +4,8 @@ function drawRectangleOfStars(n = 5) {
         console.log(line(n));
     }
 
-    function line(n = n) {
-        return "* ".repeat(n);
+    function line(s = n) {
+        return "* ".repeat(s);
     }
 
 }

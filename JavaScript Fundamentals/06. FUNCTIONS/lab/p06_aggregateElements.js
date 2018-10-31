@@ -15,6 +15,6 @@ function aggregate(arr) {
 
 }
 
-aggregate([1, 2, 3]);
+aggregate([1, 2, 4]);
 
 
