@@ -1,9 +1,10 @@
-function process(arr) {
-    for (let i = arr.length - 1; i >= 0; i--) {
-        if (i % 2 == 1) {
-            console.log(arr[i] * 2);
-        }
-    }
+function firstLastElements(arr) {
+    let result = arr
+        .filter(i => i % 2 === 1)
+        .map(x => 2*x)
+        .reverse();
+    return result.join(' ');
 }
 
-process([10, 15, 20, 25]);
+let result = firstLastElements([10, 15, 20, 25]);
+console.log(result);

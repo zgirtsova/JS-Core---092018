@@ -1,8 +1,5 @@
 function sumFirstAndLast(arr) {
-    let first = +arr[0];
-    let last = +arr[arr.length - 1];
-
-    console.log(first + last);
+    return ++arr[0] + ++arr[arr.length - 1];
 }
 
 sumFirstAndLast(['20', '30', '40']);
