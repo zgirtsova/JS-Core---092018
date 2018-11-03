@@ -1,38 +1,23 @@
-function checkIfMagic(matrix) {
-    let arr = new Set();
-
-    for (let row = 0; row < matrix.length; row++) {
-        let sum = 0;
-        for (let col = 0; col < matrix[row].length; col++) {
-            sum += matrix[row][col];
-        }
-
-        arr.add(sum);
+function magicMatrices(arr) {
+    let matrix = arr.map(row => row.split(' ')
+        .filter(x => x !== '')
+        .map(Number));
+    let sum = 0;
+    matrix[0].forEach(x => sum += x);
+    for (let row = 1; row < matrix.length; row++) {
+        let rowSum = 0;
+        matrix[row].forEach(x => rowSum += x);
+        if (rowSum !== sum)	return false;
     }
-
-    let index = 0;
-    for (let col = 0; index < matrix.length && col < matrix[index++].length; col++) {
-        let sum = 0;
-        for (let row = 0; row < matrix.length; row++) {
-            sum += matrix[row][col];
-        }
-
-        arr.add(sum);
+    for (let col = 0; col < matrix[0].length; col++) {
+        let colSum = 0;
+        for (let row = 0; row < matrix.length; row++)
+            colSum += matrix[row][col];
+        if (colSum !== sum)	return false;
     }
-
-    for (let i = 0; i < arr.length; i++) {
-        let current = arr[i];
-        for (let j = 0; j < arr.length; j++) {
-            let current1 = arr[j];
-
-            if (i != j && current != current1) {
-                console.log('false');
-                return;
-            }
-        }
-    }
+    return true;
 }
 
-checkIfMagic([[4, 5, 6],
+magicMatrices([[4, 5, 6],
     [6, 5, 4],
     [5, 5, 5]]);

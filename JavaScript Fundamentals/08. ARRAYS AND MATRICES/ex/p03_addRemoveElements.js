@@ -10,7 +10,6 @@ function addRemove(arr) {
         } else {
             result.pop();
         }
-
         n++;
     }
 

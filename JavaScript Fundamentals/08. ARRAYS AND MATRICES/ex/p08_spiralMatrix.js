@@ -52,3 +52,4 @@ function generateSpiralMatrix(row, col) {
 
     console.log(matrix.map(r => r.join(' ')).join('\n'));
 }
+generateSpiralMatrix(5, 6);
