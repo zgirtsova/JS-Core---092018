@@ -1,18 +1,15 @@
-function solve(input) {
-    let open = input.indexOf('(');
-
+function extractTextFromParenthesis(text) {
     let result = [];
-    while (open !== -1) {
-        let end = input.indexOf(')', open + 1);
-        if (end === -1) break;
-
-        let text = input.substring(open + 1, end);
-        result.push(text);
-
-        open = input.indexOf('(', end + 1);
+    let startIndex = text.indexOf('(');
+    let endIndex = text.indexOf(')', startIndex);
+    while (startIndex > -1 && endIndex > -1) {
+        let snippet = text.substring(startIndex + 1, endIndex);
+        result.push(snippet);
+        startIndex = text.indexOf('(', endIndex);
+        endIndex = text.indexOf(')', startIndex);
     }
-
     console.log(result.join(', '));
 }
 
-solve('Rakiya (Bulgarian brandy) is self-made liquor (alcoholic drink)');
+
+extractTextFromParenthesis('Rakiya (Bulgarian brandy) is self-made liquor (alcoholic drink)');

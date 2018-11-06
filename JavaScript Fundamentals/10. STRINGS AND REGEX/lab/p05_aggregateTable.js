@@ -1,18 +1,15 @@
-function solve(input) {
-    let cities = [];
-    let populations = [];
-
-    for (let obj of input) {
-        [city, population] = obj.split('|').filter(e => e.trim() !== '');
-
-        cities.push(city.trim());
-        populations.push(+(population.trim()));
+function aggregateTable(lines) {
+    let sum = 0;
+    let list = [];
+    for (let line of lines) {
+        let townData = line.split('|');
+        list.push(townData[1].trim());
+        sum += Number(townData[2].trim());
     }
-
-    console.log(cities.join(', '));
-    console.log(populations.reduce((a, b) => a + b, 0));
+    console.log(list.join(', ') + '\n' + sum);
 }
 
-solve(['| Sofia           | 300',
+
+aggregateTable(['| Sofia           | 300',
     '| Veliko Tarnovo  | 500',
     '| Yambol          | 275']);
