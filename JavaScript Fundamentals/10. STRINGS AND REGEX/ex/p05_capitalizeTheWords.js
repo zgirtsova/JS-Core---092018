@@ -11,3 +11,5 @@ function capitalize(words) {
         return word;
     }
 }
+
+capitalize('Was that Easy? tRY thIs onE for SiZe!');

@@ -1,3 +1,3 @@
-function cheker(text, word) {
+function checker(text, word) {
     return text.endsWith(word);
 }
